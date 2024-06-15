@@ -1,13 +1,14 @@
 "use client"
 
-import Image from "next/image"
-import Link from "next/link"
-import { motion } from "framer-motion"
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 import { HiDownload } from "react-icons/hi"
 import { FaGithub } from "react-icons/fa";
 import { FaBilibili } from "react-icons/fa6";
 import { SiXiaohongshu } from "react-icons/si";
-import { useSectionInView } from "@/lib/hooks"
+import { useSectionInView } from "@/lib/hooks";
 
 export function Intro() {
   const { ref } = useSectionInView("首页", 0.5)
@@ -28,11 +29,11 @@ export function Intro() {
             <Image
               src="https://avatars.githubusercontent.com/u/107763489?v=4"
               alt="developer-image"
-              width="192"
-              height="192"
-              quality="95"
+              width="250"
+              height="250"
+              quality="100"
               priority={true}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              className="h-28 w-28 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
           </motion.div>
           <motion.span
@@ -56,8 +57,34 @@ export function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <div>你好，我是&nbsp;<span className="font-bold">韩毅</span></div>
-        <div>一个&nbsp;<span className="font-bold">前端开发工程师</span></div>
+        <div className="mt-8 text-lg tracking-wider">你好，我是</div>
+        <div className="mt-4 text-center text-3xl sm:text-4xl lg:text-5xl lg:leading-normal font-extrabold">韩毅</div>
+        <div className="mt-4 text-lg tracking-wider">一个</div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="mt-4 col-span-8 place-self-center text-center sm:text-left justify-self-start"
+        >
+          <div
+            id="name"
+            className="text-center text-3xl sm:text-4xl lg:text-5xl lg:leading-normal font-extrabold"
+          >
+            <TypeAnimation
+              sequence={[
+                "前端开发工程师💻",
+                1000,
+                "云养猫专家🐱",
+                1000,
+                "提瓦特旅行者💫",
+                1000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </div>
+        </motion.div>
       </motion.h1>
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-3 px-4 text-lg font-medium"
