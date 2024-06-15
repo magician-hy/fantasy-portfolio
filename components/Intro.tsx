@@ -30,7 +30,8 @@ export function Intro() {
           <motion.span
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            className="absolute text-4xl bottom-0 right-0"
+            whileHover={{ scale: 1.25, rotate: 15 }}
+            className="absolute text-4xl bottom-0 right-0 hover:rotate-2"
             transition={{
               type: "spring",
               duration: 0.7,
@@ -50,9 +51,8 @@ export function Intro() {
         <div>你好，我是&nbsp;<span className="font-bold">韩毅</span></div>
         <div>一个&nbsp;<span className="font-bold">前端开发工程师</span></div>
       </motion.h1>
-
       <motion.div
-        className="flex items-center justify-center gap-2 px-4 text-lg font-medium"
+        className="flex sm:flex-row items-center justify-center gap-3 px-4 text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
