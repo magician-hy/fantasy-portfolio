@@ -12,16 +12,15 @@ export const links = [
     hash: "#projects",
   },
   {
-    name: "经历",
-    hash: "#experiences",
+    name: "作品",
+    hash: "#showreel",
   },
 ] as const;
 
 export const projectsData = [
   {
     title: "慕然回首",
-    description:
-      "一款日历应用",
+    description: "一款日历应用，帮助你记录、回顾以及分享。",
     tags: ["React", "TypeScript"],
     imageUrl: "https://www.pnglog.com/M3TcQU.png",
   },
